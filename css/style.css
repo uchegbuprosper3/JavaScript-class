@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.big{
+    background-color: navy;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.big .logo{
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+.big ul {
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+}
+.big ul li a{
+    text-decoration: none;
+    color: white;
+}
+.big button{
+    border: none;
+    padding: 5px 10px;
+    display: none;
+    cursor: pointer;
+}
+/* Responsive Design */
+.responsive{
+    border: 1px solid navy;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    padding: 10px 15px;
+    height: 100%;
+    width: 10%;
+    display: none;
+}
+.responsive ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 60px;
+} 
+.responsive ul li a{
+    text-decoration: none;
+    color: navy;
+    font-size: 15px;
+}
+.responsive button{
+    position: absolute;
+    right: 15px;
+    background-color: navy;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 876px) {
+    .big ul{display: none;}
+    .big button{display: inline;}
+
+}
