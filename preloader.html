@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        h1{
+            text-align: center;
+            margin-top: 10%;
+            color: red;
+            animation: zoom 3s ease-in-out infinite;
+        }
+        @keyframes zoom{
+            0%{ transform: scale(0.0); }
+            100%{transform: scale(1.1); }
+        }
+    </style>
+    <h1>WELCOME TO OUR WEBSITE</h1>
+</body>
+<script>
+    //time events/function.
+    //set timeout: calls a function once at a given time
+    //set interval: calls a function repeatedly at set intervals
+    setTimeout(() => {
+       window.location.href = 'form.html' 
+    }, 5000);
+</script>
+</html>

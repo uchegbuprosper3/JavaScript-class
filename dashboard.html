@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="big">
+        <a href="" class="logo">logo</a>
+
+        <ul class="navitems">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Log In</a></li>
+        </ul>
+
+        <button id="open">Open</button>
+    </nav>
+    
+
+    <nav class="responsive" id="responsive">
+        <button id="close"><span>&times;</span></button>
+
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Log In</a></li>
+        </ul>
+    </nav>
+    <h1 id="demo"></h1>
+    <h1 class="demo2"></h1>
+</body>
+<script>
+    document.getElementById('open').addEventListener('click', () => {
+        document.getElementById('responsive').style.display = 'block'
+        document.getElementById('responsive').style.width = '40%'
+    })
+    document.getElementById('close').addEventListener('click', () => {
+        document.getElementById('responsive').style.display = 'none'
+    })
+    setInterval(() => {
+       let dt = new Date()
+       document.getElementById('demo').innerHTML = dt.toLocaleTimeString() 
+    }, 1000);
+
+    //TYPEWRITER
+    let txt = 'WE ARE LEARNING JAVASCRIPT'
+    let i = 0
+
+    function typewriter(){
+        if(i < txt.length){
+            document.getElementById('demo2').innerHTML += txt[i]
+            i++
+            setTimeout(typewriter, 200)
+        }
+    }
+    
+</script>
+</html>

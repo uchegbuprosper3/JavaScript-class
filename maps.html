@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one{
+            padding: 10px;
+        }
+        .one input{
+            width: 50%;
+            border: 1px solid blue;
+            padding: 10px;
+        }
+        .one button{
+            padding: 10px;
+            background-color: blue;
+            border: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <label for="">enter location</label>
+        <input type="text" id="location">
+    </div>
+    <div class="one">
+        <button id="search">Search</button>
+    </div>
+    <div class="result"></div>
+</body>
+<script>
+    let search = document.getElementById('search')
+    search.addEventListener('click', () => {
+        let location = document.getElementById('location').value
+        search.innerHTML = 'searching'
+        search.disabled = true
+
+    })
+</script>
+</html>

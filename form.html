@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+</head>
+<body>
+    <form action="" id="register">
+        <label for="">email Address</label><br>
+        <input type="Email"  id="email" name=""><br>
+
+        <label for="">username</label><br>
+        <input type="text" id="username"><br>
+
+        <label for="">password</label><br>
+        <style>
+            span{ cursor: pointer;}
+        </style>
+        <input type="password" id="password"><br>
+        <span id="show">show</span>
+        <p id="msg"></p>
+
+        <button id="btn">Submit</button>
+        <!--DOM manipulation (Document Object Model)
+        Events: An event is an action that triggers a function.
+        When manipulating dom
+        1. get the element
+        2. attach an event listener
+        3. design the function
+        -->
+    </form>
+</body>
+<script>
+    let register = document.getElementById('register')
+    register.addEventListener('submit', (e) => {
+        // to stop the form from refreshing otherwise jJavaScript code will not execute
+        e.preventDefault()
+        //.value is to obtain input from the input field
+        //shift + alt + down to duplicate code lines 
+        let Username = document.getElementById('username').value
+        let email = document.getElementById('email').value
+        let password = document.getElementById('password').value
+        let msg = document.getElementById('msg')
+        let btn = document.getElementById('btn')
+
+        btn.innerHTML = 'processing'
+        btn.disabled = true
+
+        if(username == '' || email == '' || password == ''){
+            msg.innerHTML = 'all fields are required'
+            msg.style.color = 'red'
+            btn.innerHTML = 'submit'
+            btn.disabled = false
+            return
+        }
+        if(email.indexof('@') < 0){
+            msg.innerHTML = 'Please enter a valid email address'
+            msg.style.color = 'red'
+            btn.innerHTML = 'submit'
+            btn.disabled = false
+            return
+        }
+        if (password.length < 6){
+            msg.innerHTML = 'passwords should be up to 8 characters long'
+            msg.style.color = 'red'
+            btn.innerHTML = 'submit'
+            btn.disabled = false
+            return
+        }
+
+        window.location.href = 'dashboard.html'
+        alert(Username)
+        
+    })
+</script>
+</html>
